@@ -1,113 +1,76 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
-{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fswiss\fcharset0 Helvetica-Oblique;
+# GraphQL
+
+Alex Banks
+
+Moon Highway
+
+@moontahoe
+
+http://www.graphql.fun/
+GraphQL - query language for your API
+Declarative Query-fetching Language
+
+GraphQL not a DB, just a networking layer (between FE and BE)
+- Can get data from cache, DB, Faker, etc.!
+
+Questions -> Routes -> REST endpoints
+/players/jenny
+/prizes/skateboard
+
+Lots of requests to these routes (get back info we might not care about)
+
+Try the Apollo server!
+
+## 3 Root Types
+- Query
+- Mutation
+- Subscription
+
+Questions -> Queries -> GraphQL API
+**ONE endpoint**
+POST /graphql
+
+Describe exactly what you want to get back in the query
+* Pushes the work back to the backend (lets browser just render)
+
+## Playground
+http://www.graphql.fun/graphql
+
+You can add this whenever you stand up a GraphQL API
+Docs - show everything you can do to interact with the API
+
+Makes it easier for FE & BE to work together
+- Don’t need all these custom routes for FE to use!
+- Docs in playground show what is available
+
+## To change data
+- use a **mutation** 
+- Data response comes back in same shape as the request
+
+Listen for changes -> Subscriptions -> GraphQL
+* Websockets
+* Can listen for changs 
+
+GraphQL - Type system for your API
+- Can put description for each attributes
+
+Well-documented typed schema to cut down on BE -> FE confusion
+
+Subscriptions (use web sockets) work with:
+- rabbitMQ
+- Kafka
+- Redis pub-sub
+- and many more
+
+## How to Standup a GraphQL Server
+- Possible to just build ONE endpoint that is GraphQL (to gradually test and move from REST)
+
+Map each type to a resolver function
+const resolvers = {
+	Query: {
+		gnar: () => “gnarly!”
+ 	}
 }
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww14200\viewh16580\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\b\fs32 \cf0 GraphQL
-\fs38 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 Alex Banks\
-Moon Highway\
-@moontahoe\
 
-\f1\b0\fs24 \
-http://www.graphql.fun/\
-GraphQL - query language for your API\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 Declarative Query-fetching Language\
-\
-GraphQL 
-\f2\i not
-\f1\i0  a DB, just a networking layer (between FE and BE)\
-- Can get data from cache, DB, Faker, etc.!\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
-Questions -> Routes -> REST endpoints\
-/players/jenny\
-/prizes/skateboard\
-\
-Lots of requests to these routes (get back info we might not care about)\
-\
-Try the Apollo server!\
-\
-
-\f0\b\fs36 3 Root Types
-\f1\b0\fs24 \
-- Query\
-- Mutation\
-- Subscription\
-\
-Questions -> Queries -> GraphQL API\
-
-\f0\b ONE endpoint
-\f1\b0 \
-POST /graphql\
-\
-Describe 
-\f2\i exactly 
-\f1\i0 what you want to get back in the 
-\f0\b\fs32 query
-\f1\b0\fs24 \
-* Pushes the work back to the backend (lets browser just render)\
-\
-
-\f0\b\fs38 Playground
-\f1\b0\fs24 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 http://www.graphql.fun/graphql\
-\
-You can add this whenever you stand up a GraphQL API\
-Docs - show everything you can do to interact with the API\
-\
-Makes it easier for FE & BE to work together\
-- Don\'92t need all these custom routes for FE to use!\
-- Docs in playground show what is available\
-\
-
-\f0\b\fs32 To change data
-\f1\b0\fs24 \
-- use a 
-\f0\b\fs42 mutation 
-\f1\b0\fs24 \
-- Data response comes back in 
-\f2\i \ul same shape
-\f1\i0 \ulnone  as the request\
-\
-Listen for changes -> Subscriptions -> GraphQL\
-* Websockets\
-* Can listen for changs \
-\
-GraphQL - Type system for your API\
-- Can put description for each attributes\
-\
-Well-documented typed schema to cut down on BE -> FE confusion\
-\
-Subscriptions (use web sockets) work with:\
-- rabbitMQ\
-- Kafka\
-- Redis pub-sub\
-- and many more\
-\
-
-\f0\b\fs36 How to Standup a GraphQL Server
-\f1\b0\fs24 \
-- Possible to just build ONE endpoint that is GraphQL (to gradually test and move from REST)\
-\
-Map each type to a 
-\f0\b\fs34 resolver function
-\f1\b0\fs24 \
-const resolvers = \{\
-	Query: \{\
-		gnar: () => \'93gnarly!\'94\
- 	\}\
-\}\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf0 \
-\
-Can use gql to turn String into abstract syntax tree\
-\
-\'97\'97\'97\'97\'97\'97\
-Writes O\'92Reilly books}
+Can use gql to turn String into abstract syntax tree
